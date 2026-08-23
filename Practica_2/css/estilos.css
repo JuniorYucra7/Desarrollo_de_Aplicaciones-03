@@ -1,0 +1,125 @@
+/* TECNOLOGÍA Y DESARROLLO WEB */
+/* Nombre */
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header, footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+}
+
+/* Clase */
+.tarjeta {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.introduccion {
+    color: #555;
+}
+
+/* ID */
+#inicio, #tecnologias, #contacto {
+    padding: 20px;
+}
+
+/* Atributo */
+input[type="text"] {
+    border: 2px solid #555;
+}
+
+/* Pseudo-clases */
+nav a:hover {
+    color: yellow;
+}
+
+input:focus {
+    border-color: blue;
+}
+
+/* Pseudo-elementos */
+h2::first-letter {
+    font-size: 30px;
+}
+
+p::first-line {
+    font-weight: bold;
+}
+
+/* Combinados */
+section p {
+    line-height: 1.5;
+}
+
+main > section {
+    margin: 15px;
+}
+
+h2 + p {
+    margin-top: 5px;
+}
+
+/* Miltiples */
+h1, h2, h3 {
+    font-family: Arial;
+}
+
+/* Regex */
+a[href^="https"] {
+    text-decoration: underline;
+}
+
+input[name*="nom"] {
+    background: #eee;
+}
+
+/* Herencia */
+main {
+    color: #333;
+}
+
+/* Cascada */
+.tarjeta {
+    color: blue;
+}
+
+.tarjeta {
+    color: green;
+}
+
+/* Menu */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Formulario */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+    border: 0;
+}
