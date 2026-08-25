@@ -1,0 +1,21 @@
+/* Foco visible para navegación por teclado */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #005fcc !important;
+    outline-offset: 3px !important;
+}
+
+/* Contraste mejorado en enlaces */
+a {
+    color: #005fcc;
+}
+
+/* Desactivación de animaciones para usuarios con sensibilidad al movimiento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
