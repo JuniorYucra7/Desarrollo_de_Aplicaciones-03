@@ -1,0 +1,19 @@
+// ==============================================================
+// FUNCIONES MATEMÁTICAS Y ALGORITMIA EN SASS
+// ==============================================================
+
+/// Convierte un valor en píxeles a su equivalente dinámico en REM.
+/// @param {Number} $pixeles - Valor numérico en píxeles.
+/// @param {Number} $base [16px] - Valor base de la raíz HTML.
+/// @return {Number} Valor calculado en unidades rem.
+@function px-a-rem($pixeles, $base: 16px) {
+  @if type-of($pixeles) != 'number' {
+    @error "El valor '#{$pixeles}' ingresado en px-a-rem() debe ser un número.";
+  }
+  
+  // Limpieza de unidades para operar numéricamente
+  $val: if(unit($pixeles) == 'px', $pixeles / 1px, $pixeles);
+  $base-val: if(unit($base) == 'px', $base / 1px, $base);
+
+  @return ($val / $base-val) * 1rem;
+}

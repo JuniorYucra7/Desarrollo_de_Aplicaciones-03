@@ -1,0 +1,18 @@
+// Archivo compilador principal
+@import 'abstract/funciones';
+@import 'abstract/variables';
+@import 'abstract/mixins';
+@import 'components/botones';
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: $font-size-base;
+  background-color: #f8f9fa;
+  color: #2d3436;
+  margin: 0;
+  padding: $margin-lg;
+}

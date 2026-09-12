@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SystemAdmin - Dashboard Administrativo</title>
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light">
+
+  <!-- ============================================================== -->
+  <!-- A. ARQUITECTURA E INFRAESTRUCTURA DE NAVEGACIÓN (LAYOUT)        -->
+  <!-- ============================================================== -->
+  
+  <!-- Navbar Superior Semántico -->
+  <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <nav class="container-fluid">
+      <button class="btn btn-outline-light d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand fw-bold" href="#">SystemAdmin Panel</a>
+      <aside class="ms-auto d-flex align-items-center text-white me-3">
+        <small class="me-2 d-none d-sm-inline">Usuario: Admin</small>
+        <span class="badge bg-success">En línea</span>
+      </aside>
+    </nav>
+  </header>
+
+  <!-- Sidebar Lateral Semántica (Offcanvas en móviles) -->
+  <aside class="offcanvas-lg offcanvas-start bg-dark text-white sidebar-container" tabindex="-1" id="sidebarMenu">
+    <header class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title">Navegación</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu"></button>
+    </header>
+    <nav class="offcanvas-body d-flex flex-column p-3">
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link active"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white"><i class="bi bi-people me-2"></i>Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white"><i class="bi bi-shield-exclamation me-2"></i>Seguridad</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white"><i class="bi bi-hdd-network me-2"></i>Servidores</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Área Principal del Dashboard -->
+  <main class="container-fluid pt-5 mt-4">
+
+    <!-- ============================================================== -->
+    <!-- B. MÉTRICAS DINÁMICAS E INDICADORES CLAVE (KPIs)               -->
+    <!-- ============================================================== -->
+    <section class="row g-3 mb-4">
+      <!-- Tarjeta 1: Usuarios Activos -->
+      <article class="col-12 col-md-6 col-lg-3">
+        <figure class="card border-0 shadow-sm bg-primary text-white h-100 m-0">
+          <figcaption class="card-body">
+            <h6 class="card-subtitle mb-2 text-white-50">Usuarios Activos</h6>
+            <h2 class="card-title mb-0 fw-bold">1,248</h2>
+            <small class="text-white-50"><i class="bi bi-arrow-up"></i> +12% este mes</small>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Tarjeta 2: Alertas de Seguridad -->
+      <article class="col-12 col-md-6 col-lg-3">
+        <figure class="card border-0 shadow-sm bg-danger text-white h-100 m-0">
+          <figcaption class="card-body">
+            <h6 class="card-subtitle mb-2 text-white-50">Alertas Críticas</h6>
+            <h2 class="card-title mb-0 fw-bold">3</h2>
+            <small class="text-white-50">Requiere atención inmediata</small>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Tarjeta 3: Carga del Servidor -->
+      <article class="col-12 col-md-6 col-lg-3">
+        <figure class="card border-0 shadow-sm bg-warning text-dark h-100 m-0">
+          <figcaption class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">Carga del Servidor</h6>
+            <h2 class="card-title mb-0 fw-bold">78.4%</h2>
+            <small class="text-muted">CPU a alta capacidad</small>
+          </figcaption>
+        </figure>
+      </article>
+
+      <!-- Tarjeta 4: Estado del Sistema -->
+      <article class="col-12 col-md-6 col-lg-3">
+        <figure class="card border-0 shadow-sm bg-success text-white h-100 m-0">
+          <figcaption class="card-body">
+            <h6 class="card-subtitle mb-2 text-white-50">Estado Global</h6>
+            <h2 class="card-title mb-0 fw-bold">99.9%</h2>
+            <small class="text-white-50">Operativo (Uptime)</small>
+          </figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- C. VISUALIZACIÓN DE REGISTRO DE EVENTOS (TABLES Y BADGES)       -->
+    <!-- ============================================================== -->
+    <section class="card border-0 shadow-sm mb-4">
+      <header class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 fw-bold">Registro Reciente de Eventos</h5>
+        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalNuevoRegistro">
+          + Nuevo Registro
+        </button>
+      </header>
+      <figure class="card-body p-0 m-0">
+        <section class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>ID</th>
+                <th>Fecha/Hora</th>
+                <th>Evento / Descripción</th>
+                <th>Origen</th>
+                <th>Prioridad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#LOG-8041</td>
+                <td>2026-09-12 06:14</td>
+                <td>Fallo de autenticación repetido</td>
+                <td>192.168.1.45</td>
+                <td><span class="badge bg-danger">Crítico</span></td>
+              </tr>
+              <tr>
+                <td>#LOG-8040</td>
+                <td>2026-09-12 05:50</td>
+                <td>Uso de memoria superior al 85%</td>
+                <td>Node-Server-01</td>
+                <td><span class="badge bg-warning text-dark">Advertencia</span></td>
+              </tr>
+              <tr>
+                <td>#LOG-8039</td>
+                <td>2026-09-12 04:30</td>
+                <td>Copia de seguridad completada con éxito</td>
+                <td>DB-Master</td>
+                <td><span class="badge bg-success">Normal</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </figure>
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- D. INTERACCIÓN MEDIANTE FORMULARIO DE INGRESO (MODAL)          -->
+  <!-- ============================================================== -->
+  <dialog class="modal fade" id="modalNuevoRegistro" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <article class="modal-dialog modal-dialog-centered">
+      <section class="modal-content border-0 shadow">
+        <header class="modal-header bg-primary text-white">
+          <h5 class="modal-title fw-bold" id="modalLabel">Registrar Nuevo Evento</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </header>
+        <form id="formNuevoRegistro">
+          <fieldset class="modal-body border-0 p-3">
+            <section class="mb-3">
+              <label for="eventoNombre" class="form-label fw-bold">Nombre del Evento</label>
+              <input type="text" class="form-control" id="eventoNombre" placeholder="Ej. Actualización de Kernel" required>
+            </section>
+            <section class="mb-3">
+              <label for="prioridadSelect" class="form-label fw-bold">Nivel de Prioridad</label>
+              <select class="form-select" id="prioridadSelect" required>
+                <option value="" selected disabled>Seleccione una opción...</option>
+                <option value="Normal">Normal</option>
+                <option value="Advertencia">Advertencia</option>
+                <option value="Crítico">Crítico</option>
+              </select>
+            </section>
+            <section class="mb-3">
+              <label for="origenInput" class="form-label fw-bold">Origen / Dispositivo</label>
+              <input type="text" class="form-control" id="origenInput" placeholder="Ej. Gateway-Arequipa" required>
+            </section>
+          </fieldset>
+          <footer class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Guardar Registro</button>
+          </footer>
+        </form>
+      </section>
+    </article>
+  </dialog>
+
+  <!-- Scripts de Bootstrap JS y App -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

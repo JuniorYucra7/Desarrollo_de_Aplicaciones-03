@@ -1,0 +1,16 @@
+// ==============================================================
+// MIXINS DE ENCAPSULAMIENTO Y ACCESIBILIDAD
+// ==============================================================
+
+/// Mixin que asigna el fondo y determina automáticamente el contraste del texto según la luminosidad.
+/// @param {Color} $color-fondo - Color asignado al componente.
+@mixin tema-componente($color-fondo) {
+  background-color: $color-fondo;
+
+  // Estructura de control condicional para accesibilidad WCAG
+  @if lightness($color-fondo) > 60% {
+    color: #2d3436; // Texto oscuro en fondos muy claros
+  } @else {
+    color: #ffffff; // Texto claro en fondos oscuros
+  }
+}

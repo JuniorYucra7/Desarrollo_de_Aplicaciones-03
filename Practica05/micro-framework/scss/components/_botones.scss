@@ -1,0 +1,37 @@
+// ==============================================================
+// COMPONENTES: GENERACIÓN DE BOTONES UTILITARIOS
+// ==============================================================
+@import '../abstract/variables';
+@import '../abstract/mixins';
+@import '../abstract/funciones';
+// Estilo base para los botones
+.btn {
+  display: inline-block;
+  padding: px-a-rem(10px) px-a-rem(20px);
+  font-size: $font-size-base;
+  font-weight: 600;
+  border: none;
+  border-radius: px-a-rem(6px);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  margin: $margin-sm;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Bucle e iteración automatizada sobre el mapa de colores
+@each $nombre-color, $valor-color in $tema-colores {
+  .btn-#{$nombre-color} {
+    // Aplicación del mixin de contraste inteligente
+    @include tema-componente($valor-color);
+
+    // Cálculo matemático del estado hover usando darken()
+    &:hover {
+      background-color: darken($valor-color, 12%);
+    }
+  }
+}

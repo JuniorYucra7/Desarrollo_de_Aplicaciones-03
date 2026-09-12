@@ -1,0 +1,22 @@
+// ==============================================================
+// VARIABLES GLOBALES Y MAPAS DE COLORES
+// ==============================================================
+@import 'funciones';
+
+// Tamaños de fuente y márgenes escalables mediante la función px-a-rem
+$font-size-base: px-a-rem(16px);
+$font-size-sm: px-a-rem(14px);
+$font-size-lg: px-a-rem(20px);
+
+$margin-sm: px-a-rem(8px);
+$margin-md: px-a-rem(16px);
+$margin-lg: px-a-rem(32px);
+
+// Mapa de colores corporativos del Micro-Framework (5 variantes)
+$tema-colores: (
+  "primario": #6c5ce7,
+  "secundario": #00b894,
+  "acento": #e84393,
+  "peligro": #d63031,
+  "advertencia": #fdcb6e
+);
